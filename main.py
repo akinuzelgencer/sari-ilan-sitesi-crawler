@@ -56,6 +56,7 @@ class GetRequest:
                 for pageNumber in range(0,1000,50):
                     url=car+str(pageNumber)+"&pagingSize=50"+str(criteria)
                     
+                    #ban yememek için belirli bir süre bekleterek işlem yapmalı
                     sleep(randint(10,40))
                     r=requests.get(url, headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"})
                     soup=BeautifulSoup(r.content,"lxml")
